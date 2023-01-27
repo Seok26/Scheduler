@@ -138,11 +138,40 @@ def start_info():
     part4_text_cost_week = Text(frame1, width = 10, height = 2, font = 12)
     part4_text_cost_week.place(x = 506, y = 660)
 
-    """
-    #요일 Label
-    mon_label = Label(tk, text = '월', relief = 'raised', bd = 2, width = 12, height = 3, font = 5)
-    mon_label.place(x = 300, y = 80)
+    #직원 정보 입력
+    name_label2 = Label(frame2, text = '직원 정보 입력', relief = 'raised', bd = 2, width = 20, height = 4, font = 20)
+    name_label2.place(x = 220, y = 100)
 
+    announce_label2 = Label(frame2, text = '근무 가능한 파트에 체크하세요', relief = 'groove', bd = 2, width = 40, height = 3, font = 15)
+    announce_label2.place(x = 140, y = 200)
+
+    #1번 직원 입력 값
+    worker_text = Text(frame2, width = 13, height = 1, font = 12)
+    worker_text.place(x = 50, y = 270)
+    worker_text.insert(1.0, '이름 입력')
+
+    part1_check_1 = IntVar()
+    part1_checkbox_1 = Checkbutton(frame2, text = '파트 1', variable=part1_check_1)
+    part1_checkbox_1.place(x = 38, y = 295)
+
+    part2_check_1 = IntVar()
+    part2_checkbox_1 = Checkbutton(frame2, text = '파트 2', variable=part2_check_1)
+    part2_checkbox_1.place(x = 105, y = 295)
+
+    part3_check_1 = IntVar()
+    part3_checkbox_1 = Checkbutton(frame2, text = '파트 3', variable=part3_check_1)
+    part3_checkbox_1.place(x = 38, y = 325)
+
+    part4_check_1 = IntVar()
+    part4_checkbox_1 = Checkbutton(frame2, text = '파트 4', variable=part4_check_1)
+    part4_checkbox_1.place(x = 105, y = 325)
+
+
+
+    #저장 후 종료
+    exit_button = Button(frame2, text = '저장 후 종료', width = 10, bg = 'white', height = 2, padx = 10, pady = 10)
+    exit_button.place(x = 500, y = 30)
+    """
     tue_label = Label(tk, text = '화', relief = 'raised', bd = 2, width = 12, height = 3, font = 5)
     tue_label.place(x = 420, y = 80)
 
