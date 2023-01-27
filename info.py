@@ -166,6 +166,11 @@ def start_info():
     part4_checkbox_1 = Checkbutton(frame2, text = '파트 4', variable=part4_check_1)
     part4_checkbox_1.place(x = 105, y = 325)
 
+    #관리자 여부 판단
+    check_super_1 = IntVar()
+    checkbox_super_1 = Checkbutton(frame2, text = '관리자', variable = check_super_1)
+    checkbox_super_1.place(x = 70, y = 355)
+
 
 
     #저장 후 종료
