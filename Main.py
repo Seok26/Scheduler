@@ -4,6 +4,8 @@ from info import start_info
 from cost import start_cost
 from threading import Thread
 
+
+# 다른 페이지로 이동
 def enter_info():
     new_thread = Thread(target = start_info)
     new_thread.start()
@@ -16,6 +18,11 @@ def enter_cost():
     new_thread = Thread(target = start_cost)
     new_thread.start()
 
+"""
+=======================================================
+UI 작성 시작
+=======================================================
+"""
 tk = Tk()
 tk.title("Part Timer Scheduler") #제목
 tk.geometry("640x400+100+100") #Window 크기 설정
@@ -37,6 +44,12 @@ cost_button = Button(tk, text = '급여 조회', command = enter_cost, width = 3
 cost_button.place(x = 200, y = 300)
 
 tk.mainloop()
+
+"""
+=======================================================
+UI 작성 종료
+=======================================================
+"""
 
 
 

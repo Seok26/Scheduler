@@ -1,6 +1,12 @@
 from tkinter import *
+
+
+#저장 후 종료
 def save_exit():
     exit()
+
+
+#프로그램 시작
 def start_search():
     tk = Tk()
     tk.title("Part Timer Scheduler") #제목

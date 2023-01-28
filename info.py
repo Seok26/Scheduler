@@ -1,22 +1,27 @@
 from tkinter import *
 
 
+#저장 후 종료
 def save_exit():
     exit()
 
+#프로그램 시작
 def start_info():
     tk = Tk()
     tk.title("Part Timer Scheduler") #제목
     tk.geometry("1280x800+100+100") #Window 크기 설정
     tk.resizable(True, True) #Window 크기 조절 여부(상하, 좌우)
 
+    #프레임1 : 파트 및 급여 정보 입력
     frame1 = Frame(tk, relief = 'solid', bd = 2)
     frame1.pack(side = 'left', fill = 'both', expand=True)
 
+    #프레임2 : 직원 정보 입력
     frame2 = Frame(tk, relief = "solid", bd = 2)
     frame2.pack(side="right", fill= "both", expand = True)
 
 
+    #가이드 UI
     title_label = Label(frame1, text = '아르바이트 정보 입력', relief = 'raised', bd = 2, width = 30, height = 5, font = 20)
     title_label.place(x = 0, y = 0)
 
@@ -40,10 +45,12 @@ def start_info():
     part1_label = Label(frame1, text = '파트 1', relief = 'raised', bd = 2, width = 12, height = 3, font = 15)
     part1_label.place(x = 20, y = 350)
 
+    #시작 시간
     part1_entry_start = Entry(frame1, width = 16, justify = 'center')
     part1_entry_start.place(x= 150, y = 350)
     part1_entry_start.insert(0, "시작 시간") #시작시간 / 종료시간 안내는 파트 1 버튼에서만 수행
 
+    #종료 시간
     part1_entry_end = Entry(frame1, width= 16, justify= 'center')
     part1_entry_end.place(x = 150, y = 385)
     part1_entry_end.insert(0, "종료 시간")
@@ -60,7 +67,6 @@ def start_info():
     part1_entry_end_week = Entry(frame1, width = 16, justify=  'center')
     part1_entry_end_week.place(x = 378, y = 385)
 
-    #급여 입력 칸
     part1_text_cost_week = Text(frame1, width = 10, height = 2, font = 12)
     part1_text_cost_week.place(x = 506, y = 360)
 
@@ -75,7 +81,6 @@ def start_info():
     part2_entry_end = Entry(frame1, width = 16, justify= 'center')
     part2_entry_end.place(x = 150, y = 485)
 
-    #급여 입력 칸
     part2_text_cost = Text(frame1, width = 10, height = 2, font = 12)
     part2_text_cost.place(x = 278, y = 460)
 
@@ -86,7 +91,6 @@ def start_info():
     part2_entry_end_week = Entry(frame1, width = 16, justify= 'center')
     part2_entry_end_week.place(x = 378, y = 485)
 
-    #급여 입력 칸
     part2_text_cost_week = Text(frame1, width = 10, height = 2, font = 12)
     part2_text_cost_week.place(x = 506, y = 460)
 
@@ -101,7 +105,6 @@ def start_info():
     part3_entry_end = Entry(frame1, width = 16, justify= 'center')
     part3_entry_end.place(x = 150, y = 585)
 
-    #급여 입력 칸
     part3_text_cost = Text(frame1, width = 10, height = 2, font = 12)
     part3_text_cost.place(x = 278, y = 560)
 
@@ -112,7 +115,6 @@ def start_info():
     part3_entry_end_week = Entry(frame1, width = 16, justify= 'center')
     part3_entry_end_week.place(x = 378, y = 585)
 
-    #급여 입력 칸
     part3_text_cost_week = Text(frame1, width = 10, height = 2, font = 12)
     part3_text_cost_week.place(x = 506, y = 560)
 
@@ -127,7 +129,6 @@ def start_info():
     part3_entry_end = Entry(frame1, width = 16, justify= 'center')
     part3_entry_end.place(x = 150, y = 685)
 
-    #급여 입력 칸
     part4_text_cost = Text(frame1, width = 10, height = 2, font = 12)
     part4_text_cost.place(x = 278, y = 660)
 
@@ -138,27 +139,22 @@ def start_info():
     part3_entry_end_week = Entry(frame1, width = 16, justify= 'center')
     part3_entry_end_week.place(x = 378, y = 685)
 
-    #급여 입력 칸
     part4_text_cost_week = Text(frame1, width = 10, height = 2, font = 12)
     part4_text_cost_week.place(x = 506, y = 660)
 
-    #직원 정보 입력
+    #프레임 2 직원 정보 입력
     name_label2 = Label(frame2, text = '직원 정보 입력', relief = 'raised', bd = 2, width = 20, height = 4, font = 20)
     name_label2.place(x = 220, y = 100)
 
     announce_label2 = Label(frame2, text = '근무 가능한 파트에 체크하세요', relief = 'groove', bd = 2, width = 40, height = 3, font = 15)
     announce_label2.place(x = 140, y = 200)
 
-    """
-    =======================================================
-    직원 정보 입력 UI 시작
-    =======================================================
-    """
-    #1번 직원 입력 값
+    #1번 직원 이름
     worker_text = Text(frame2, width = 13, height = 1, font = 12)
     worker_text.place(x = 50, y = 270)
     worker_text.insert(1.0, '이름 입력')
 
+    #파트 체크박스
     part1_check_1 = IntVar()
     part1_checkbox_1 = Checkbutton(frame2, text = '파트 1', variable=part1_check_1)
     part1_checkbox_1.place(x = 38, y = 295)
@@ -184,6 +180,7 @@ def start_info():
     worker2_text = Text(frame2, width = 13, height = 1, font = 12)
     worker2_text.place(x = 50, y = 385)
 
+    #파트 체크박스
     part1_check_2 = IntVar()
     part1_checkbox_2 = Checkbutton(frame2, text = '파트 1', variable=part1_check_2)
     part1_checkbox_2.place(x = 38, y = 410)
@@ -209,6 +206,7 @@ def start_info():
     worker3_text = Text(frame2, width = 13, height = 1, font = 12)
     worker3_text.place(x = 50, y = 500)
 
+    #파트 체크박스
     part1_check_3 = IntVar()
     part1_checkbox_3 = Checkbutton(frame2, text = '파트 1', variable=part1_check_3)
     part1_checkbox_3.place(x = 38, y = 525)
@@ -234,6 +232,7 @@ def start_info():
     worker4_text = Text(frame2, width = 13, height = 1, font = 12)
     worker4_text.place(x = 50, y = 615)
 
+    #파트 체크박스
     part1_check_4 = IntVar()
     part1_checkbox_4 = Checkbutton(frame2, text = '파트 1', variable=part1_check_4)
     part1_checkbox_4.place(x = 38, y = 640)
@@ -259,7 +258,7 @@ def start_info():
     worker5_text = Text(frame2, width = 13, height = 1, font = 12)
     worker5_text.place(x = 200, y = 270)
 
-
+    #파트 체크박스
     part1_check_5 = IntVar()
     part1_checkbox_5 = Checkbutton(frame2, text = '파트 1', variable=part1_check_5)
     part1_checkbox_5.place(x = 188, y = 295)
@@ -276,6 +275,7 @@ def start_info():
     part4_checkbox_5 = Checkbutton(frame2, text = '파트 4', variable=part4_check_5)
     part4_checkbox_5.place(x = 255, y = 325)
 
+    #관리자 여부 판단
     check_super_5 = IntVar()
     checkbox_super_5 = Checkbutton(frame2, text = '관리자', variable = check_super_5)
     checkbox_super_5.place(x = 220, y = 355)
@@ -284,6 +284,7 @@ def start_info():
     worker6_text = Text(frame2, width = 13, height = 1, font = 12)
     worker6_text.place(x = 200, y = 385)
 
+    #파트 체크박스
     part1_check_6 = IntVar()
     part1_checkbox_6 = Checkbutton(frame2, text = '파트 1', variable=part1_check_6)
     part1_checkbox_6.place(x = 188, y = 410)
@@ -300,10 +301,16 @@ def start_info():
     part4_checkbox_6 = Checkbutton(frame2, text = '파트 4', variable=part4_check_6)
     part4_checkbox_6.place(x = 255, y = 440)
 
+    #관리자 여부 판단
+    check_super_6 = IntVar()
+    checkbox_super_6 = Checkbutton(frame2, text = '관리자', variable = check_super_6)
+    checkbox_super_6.place(x = 220, y = 470)
+
     #7번 직원 입력 값
     worker7_text = Text(frame2, width = 13, height = 1, font = 12)
     worker7_text.place(x = 200, y = 500)
 
+    #파트 체크박스
     part1_check_7 = IntVar()
     part1_checkbox_7 = Checkbutton(frame2, text = '파트 1', variable=part1_check_7)
     part1_checkbox_7.place(x = 188, y = 525)
@@ -320,6 +327,7 @@ def start_info():
     part4_checkbox_7 = Checkbutton(frame2, text = '파트 4', variable=part4_check_7)
     part4_checkbox_7.place(x = 255, y = 555)
 
+    #관리자 여부 판단
     check_super_7 = IntVar()
     checkbox_super_7 = Checkbutton(frame2, text = '관리자', variable = check_super_7)
     checkbox_super_7.place(x = 220, y = 585)
@@ -328,6 +336,7 @@ def start_info():
     worker8_text = Text(frame2, width = 13, height = 1, font = 12)
     worker8_text.place(x = 200, y = 615)
 
+    #파트 체크박스
     part1_check_8 = IntVar()
     part1_checkbox_8 = Checkbutton(frame2, text = '파트 1', variable=part1_check_8)
     part1_checkbox_8.place(x = 188, y = 640)
@@ -344,6 +353,7 @@ def start_info():
     part4_checkbox_8 = Checkbutton(frame2, text = '파트 4', variable=part4_check_8)
     part4_checkbox_8.place(x = 255, y = 670)
 
+    #관리자 여부 판단
     check_super_8 = IntVar()
     checkbox_super_8 = Checkbutton(frame2, text = '관리자', variable = check_super_8)
     checkbox_super_8.place(x = 220, y = 700)
@@ -352,6 +362,7 @@ def start_info():
     worker9_text = Text(frame2, width = 13, height = 1, font = 12)
     worker9_text.place(x = 350, y = 270)
 
+    #파트 체크박스
     part1_check_9 = IntVar()
     part1_checkbox_9 = Checkbutton(frame2, text = '파트 1', variable=part1_check_9)
     part1_checkbox_9.place(x = 328, y = 295)
@@ -368,6 +379,7 @@ def start_info():
     part4_checkbox_9 = Checkbutton(frame2, text = '파트 4', variable=part4_check_9)
     part4_checkbox_9.place(x = 405, y = 325)
 
+    #관리자 여부 판단
     check_super_9 = IntVar()
     checkbox_super_9 = Checkbutton(frame2, text = '관리자', variable = check_super_9)
     checkbox_super_9.place(x = 370, y = 355)
@@ -376,6 +388,7 @@ def start_info():
     worker10_text = Text(frame2, width = 13, height = 1, font = 12)
     worker10_text.place(x = 350, y = 385)
 
+    #파트 체크박스
     part1_check_10 = IntVar()
     part1_checkbox_10 = Checkbutton(frame2, text = '파트 1', variable=part1_check_10)
     part1_checkbox_10.place(x = 328, y = 410)
@@ -392,6 +405,7 @@ def start_info():
     part4_checkbox_10 = Checkbutton(frame2, text = '파트 4', variable=part4_check_10)
     part4_checkbox_10.place(x = 405, y = 440)
 
+    #관리자 여부 판단
     check_super_10 = IntVar()
     checkbox_super_10 = Checkbutton(frame2, text = '관리자', variable = check_super_10)
     checkbox_super_10.place(x = 370, y = 470)
@@ -400,6 +414,7 @@ def start_info():
     worker11_text = Text(frame2, width = 13, height = 1, font = 12)
     worker11_text.place(x = 350, y = 500)
 
+    #파트 체크박스
     part1_check_11 = IntVar()
     part1_checkbox_11 = Checkbutton(frame2, text = '파트 1', variable=part1_check_11)
     part1_checkbox_11.place(x = 328, y = 525)
@@ -416,6 +431,7 @@ def start_info():
     part4_checkbox_11 = Checkbutton(frame2, text = '파트 4', variable=part4_check_11)
     part4_checkbox_11.place(x = 405, y = 555)
 
+    #관리자 여부 판단
     check_super_11 = IntVar()
     checkbox_super_11 = Checkbutton(frame2, text = '관리자', variable = check_super_11)
     checkbox_super_11.place(x = 370, y = 585)
@@ -424,6 +440,7 @@ def start_info():
     worker12_text = Text(frame2, width = 13, height = 1, font = 12)
     worker12_text.place(x = 350, y = 615)
 
+    #파트 체크박스
     part1_check_12 = IntVar()
     part1_checkbox_12 = Checkbutton(frame2, text = '파트 1', variable=part1_check_12)
     part1_checkbox_12.place(x = 328, y = 640)
@@ -440,38 +457,16 @@ def start_info():
     part4_checkbox_12 = Checkbutton(frame2, text = '파트 4', variable=part4_check_12)
     part4_checkbox_12.place(x = 405, y = 670)
 
+    #관리자 여부 판단
     check_super_12 = IntVar()
     checkbox_super_12 = Checkbutton(frame2, text = '관리자', variable = check_super_12)
     checkbox_super_12.place(x = 370, y = 700)
-
-    #8번 직원 입력 값
-    worker8_text = Text(frame2, width = 13, height = 1, font = 12)
-    worker8_text.place(x = 200, y = 615)
-
-    part1_check_8 = IntVar()
-    part1_checkbox_8 = Checkbutton(frame2, text = '파트 1', variable=part1_check_8)
-    part1_checkbox_8.place(x = 188, y = 640)
-
-    part2_check_8 = IntVar()
-    part2_checkbox_8 = Checkbutton(frame2, text = '파트 2', variable=part2_check_8)
-    part2_checkbox_8.place(x = 255, y = 640)
-
-    part3_check_8 = IntVar()
-    part3_checkbox_8 = Checkbutton(frame2, text = '파트 3', variable=part3_check_8)
-    part3_checkbox_8.place(x = 188, y = 670)
-
-    part4_check_8 = IntVar()
-    part4_checkbox_8 = Checkbutton(frame2, text = '파트 4', variable=part4_check_8)
-    part4_checkbox_8.place(x = 255, y = 670)
-
-    check_super_8 = IntVar()
-    checkbox_super_8 = Checkbutton(frame2, text = '관리자', variable = check_super_8)
-    checkbox_super_8.place(x = 220, y = 700)
 
     #13번 직원 입력 값
     worker13_text = Text(frame2, width = 13, height = 1, font = 12)
     worker13_text.place(x = 500, y = 270)
 
+    #파트 체크박스
     part1_check_13 = IntVar()
     part1_checkbox_13 = Checkbutton(frame2, text = '파트 1', variable=part1_check_13)
     part1_checkbox_13.place(x = 478, y = 295)
@@ -488,6 +483,7 @@ def start_info():
     part4_checkbox_13 = Checkbutton(frame2, text = '파트 4', variable=part4_check_13)
     part4_checkbox_13.place(x = 555, y = 325)
 
+    #관리자 여부 판단
     check_super_13 = IntVar()
     checkbox_super_13 = Checkbutton(frame2, text = '관리자', variable = check_super_13)
     checkbox_super_13.place(x = 520, y = 355)
@@ -496,6 +492,7 @@ def start_info():
     worker14_text = Text(frame2, width = 13, height = 1, font = 12)
     worker14_text.place(x = 500, y = 385)
 
+    #파트 체크박스
     part1_check_14 = IntVar()
     part1_checkbox_14 = Checkbutton(frame2, text = '파트 1', variable=part1_check_14)
     part1_checkbox_14.place(x = 478, y = 410)
@@ -512,6 +509,7 @@ def start_info():
     part4_checkbox_14 = Checkbutton(frame2, text = '파트 4', variable=part4_check_14)
     part4_checkbox_14.place(x = 555, y = 440)
 
+    #관리자 여부 판단
     check_super_14 = IntVar()
     checkbox_super_14 = Checkbutton(frame2, text = '관리자', variable = check_super_14)
     checkbox_super_14.place(x = 520, y = 470)
@@ -520,6 +518,7 @@ def start_info():
     worker15_text = Text(frame2, width = 13, height = 1, font = 12)
     worker15_text.place(x = 500, y = 500)
 
+    #파트 체크박스
     part1_check_15 = IntVar()
     part1_checkbox_15 = Checkbutton(frame2, text = '파트 1', variable=part1_check_15)
     part1_checkbox_15.place(x = 478, y = 525)
@@ -536,6 +535,7 @@ def start_info():
     part4_checkbox_15 = Checkbutton(frame2, text = '파트 4', variable=part4_check_15)
     part4_checkbox_15.place(x = 555, y = 555)
 
+    #관리자 여부 판단
     check_super_15 = IntVar()
     checkbox_super_15 = Checkbutton(frame2, text = '관리자', variable = check_super_15)
     checkbox_super_15.place(x = 520, y = 585)
@@ -544,6 +544,7 @@ def start_info():
     worker16_text = Text(frame2, width = 13, height = 1, font = 12)
     worker16_text.place(x = 500, y = 615)
 
+    #파트 체크박스
     part1_check_16 = IntVar()
     part1_checkbox_16 = Checkbutton(frame2, text = '파트 1', variable=part1_check_16)
     part1_checkbox_16.place(x = 478, y = 640)
@@ -560,11 +561,12 @@ def start_info():
     part4_checkbox_16 = Checkbutton(frame2, text = '파트 4', variable=part4_check_16)
     part4_checkbox_16.place(x = 555, y = 670)
 
+    #관리자 여부 판단
     check_super_16 = IntVar()
     checkbox_super_16 = Checkbutton(frame2, text = '관리자', variable = check_super_16)
     checkbox_super_16.place(x = 520, y = 700)
 
-    #저장 후 종료
+    #저장 후 종료 버튼
     exit_button = Button(frame2, text = '저장 후 종료', command = save_exit, width = 10, bg = 'white', height = 2, padx = 10, pady = 10)
     exit_button.place(x = 500, y = 30)
 
