@@ -11,16 +11,19 @@ def start_search():
     title_label.pack(side='top')
 
     #파트 당 최대 근무 인원수 작성
-    max_worker = Text(tk, width = 12, height = 2, font = 12)
+    max_worker = Text(tk, width = 12, height = 2, font = 12, wrap = "word")
     max_worker.place(x = 20, y = 50)
     max_worker.insert(1.0, "인원 수")
 
+    #시간표 조회 시작
     search_button = Button(tk, text = '시간표 조회', width = 13, bg = 'blue', fg = 'white', height = 2, padx = 10, pady = 10)
     search_button.place(x = 150, y = 35)
 
+    #종료 버튼
     exit_button = Button(tk, text = '뒤로 가기', command = save_exit, width = 13, bg = 'white', height = 2, padx = 10, pady = 10)
     exit_button.place(x = 1100, y = 35)
 
+    #파트 1 - 4 Label
     part1_label = Label(tk, text = '파트 1', relief = 'solid', bd = 2, width = 10, height = 8, font = 15)
     part1_label.place(x = 20, y = 220)
 
@@ -33,6 +36,7 @@ def start_search():
     part4_label = Label(tk, text = '파트 4', relief = 'solid', bd = 2, width = 10, height = 8, font = 15)
     part4_label.place(x = 20, y = 820)
 
+    #요일 Label
     mon_label = Label(tk, text = '월', relief = 'raised', bd = 2, width = 10, height = 3, font = 10)
     mon_label.place(x = 200, y = 150)
 
