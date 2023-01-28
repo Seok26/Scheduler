@@ -171,7 +171,30 @@ def start_info():
     checkbox_super_1 = Checkbutton(frame2, text = '관리자', variable = check_super_1)
     checkbox_super_1.place(x = 70, y = 355)
 
+    #2번 직원 입력 값
+    worker2_text = Text(frame2, width = 13, height = 1, font = 12)
+    worker2_text.place(x = 50, y = 385)
 
+    part1_check_2 = IntVar()
+    part1_checkbox_2 = Checkbutton(frame2, text = '파트 1', variable=part1_check_2)
+    part1_checkbox_2.place(x = 38, y = 410)
+
+    part2_check_2 = IntVar()
+    part2_checkbox_2 = Checkbutton(frame2, text = '파트 2', variable=part2_check_2)
+    part2_checkbox_2.place(x = 105, y = 410)
+
+    part3_check_2 = IntVar()
+    part3_checkbox_2 = Checkbutton(frame2, text = '파트 3', variable=part3_check_2)
+    part3_checkbox_2.place(x = 38, y = 440)
+
+    part4_check_4 = IntVar()
+    part4_checkbox_4 = Checkbutton(frame2, text = '파트 4', variable=part4_check_4)
+    part4_checkbox_4.place(x = 105, y = 440)
+
+    #관리자 여부 판단
+    check_super_2 = IntVar()
+    checkbox_super_2 = Checkbutton(frame2, text = '관리자', variable = check_super_2)
+    checkbox_super_2.place(x = 70, y = 470)
 
     #저장 후 종료
     exit_button = Button(frame2, text = '저장 후 종료', width = 10, bg = 'white', height = 2, padx = 10, pady = 10)
