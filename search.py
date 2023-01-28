@@ -60,91 +60,91 @@ def start_search():
     mon_part1.place(x = 185, y = 220)
     mon_part1.insert(1.0, "     오영석\n     김두현\n     김민석")
 
-    tue_part1 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    tue_part1 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     tue_part1.place(x = 335, y = 220)
 
-    wed_part1 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    wed_part1 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     wed_part1.place(x = 485, y = 220)
 
-    thu_part1 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    thu_part1 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     thu_part1.place(x = 635, y = 220)
 
-    fri_part1 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    fri_part1 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     fri_part1.place(x = 785, y = 220)
 
-    sat_part1 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    sat_part1 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     sat_part1.place(x = 935, y = 220)
 
-    sun_part1 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    sun_part1 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     sun_part1.place(x = 1085, y = 220)
 
     #파트 2
-    mon_part2 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    mon_part2 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     mon_part2.place(x = 185, y = 420)
     mon_part2.insert(1.0, "     오영석\n     김두현\n     김민석")
 
-    tue_part2 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    tue_part2 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     tue_part2.place(x = 335, y = 420)
 
-    wed_part2 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    wed_part2 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     wed_part2.place(x = 485, y = 420)
 
-    thu_part2 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    thu_part2 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     thu_part2.place(x = 635, y = 420)
 
-    fri_part2 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    fri_part2 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     fri_part2.place(x = 785, y = 420)
 
-    sat_part2 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    sat_part2 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     sat_part2.place(x = 935, y = 420)
 
-    sun_part2 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    sun_part2 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     sun_part2.place(x = 1085, y = 420)
 
     #파트 3
-    mon_part3 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    mon_part3 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     mon_part3.place(x = 185, y = 620)
     mon_part3.insert(1.0, "     오영석\n     김두현\n     김민석")
 
-    tue_part3 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    tue_part3 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     tue_part3.place(x = 335, y = 620)
 
-    wed_part3 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    wed_part3 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     wed_part3.place(x = 485, y = 620)
 
-    thu_part3 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    thu_part3 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     thu_part3.place(x = 635, y = 620)
 
-    fri_part3 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    fri_part3 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     fri_part3.place(x = 785, y = 620)
 
-    sat_part3 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    sat_part3 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     sat_part3.place(x = 935, y = 620)
 
-    sun_part3 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    sun_part3 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     sun_part3.place(x = 1085, y = 620)
 
     #파트 4
-    mon_part4 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    mon_part4 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     mon_part4.place(x = 185, y = 820)
     mon_part4.insert(1.0, "     오영석\n     김두현\n     김민석")
 
-    tue_part4 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    tue_part4 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     tue_part4.place(x = 335, y = 820)
 
-    wed_part4 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    wed_part4 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     wed_part4.place(x = 485, y = 820)
 
-    thu_part4 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    thu_part4 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     thu_part4.place(x = 635, y = 820)
 
-    fri_part4 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    fri_part4 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     fri_part4.place(x = 785, y = 820)
 
-    sat_part4 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    sat_part4 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     sat_part4.place(x = 935, y = 820)
 
-    sun_part4 = Text(tk, width = 11, height = 6, font = ("", 15,"bold"))
+    sun_part4 = Text(tk, relief = 'solid', bd = 4, width = 11, height = 6, font = ("", 15,"bold"))
     sun_part4.place(x = 1085, y = 820)
     tk.mainloop()
 
