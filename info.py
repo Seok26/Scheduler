@@ -1,16 +1,45 @@
 from tkinter import *
+import pickle
 
 
 #저장 후 종료
 def save_exit():
     exit()
 
+def save_file(part, worker, super):
+    part_info = open("part_info", "wb")
+    pickle.dump(part, part_info)
+    part_info.close()
+
+    worker_info = open("wokrer_info", "wb")
+    pickle.dump(worker, worker_info)
+    worker_info.close()
+
+    super_info = open("super_info", "wb")
+    pickle.dump(super, super_info)
+    super_info.close()
+
+
+
+
 #프로그램 시작
 def start_info():
+    #index 0의 데이터는 저장시 필요한 구분
+    part_info = [] #파트 정보
+    part_info.append("part")
+    worker_info = [] #직원 정보
+    worker_info.append("worker")
+    super_info = [] #관리자 정보 length가 0이면 일반 모드라고 판단
+    super_info.append("super")
+
+    #####################################################
+    ####################UI 작성 시작######################
+    #####################################################
     tk = Tk()
     tk.title("Part Timer Scheduler") #제목
     tk.geometry("1280x800+100+100") #Window 크기 설정
     tk.resizable(True, True) #Window 크기 조절 여부(상하, 좌우)
+
 
     #프레임1 : 파트 및 급여 정보 입력
     frame1 = Frame(tk, relief = 'solid', bd = 2)
@@ -19,7 +48,6 @@ def start_info():
     #프레임2 : 직원 정보 입력
     frame2 = Frame(tk, relief = "solid", bd = 2)
     frame2.pack(side="right", fill= "both", expand = True)
-
 
     #가이드 UI
     title_label = Label(frame1, text = '아르바이트 정보 입력', relief = 'raised', bd = 2, width = 30, height = 5, font = 20)
@@ -31,8 +59,10 @@ def start_info():
     weekday_label = Label(frame1, text = '평일', relief = 'raised', bd = 2, width = 12, height = 3, font = 15)
     weekday_label.place(x = 150, y = 275)
 
+    """
     weekend_label = Label(frame1, text = '주말', relief = 'raised', bd = 2, width = 12, height = 3, font = 15)
     weekend_label.place(x = 380, y = 275)
+    """
 
     costset_button = Button(frame1, text = '급여 일괄 적용', overrelief= "solid", bg = 'white', width = 12, height = 2, font = 12)
     costset_button.place(x = 15, y = 285)
@@ -60,7 +90,8 @@ def start_info():
     part1_text_cost.place(x = 278, y = 360)
     part1_text_cost.insert(1.0, "급여 입력")
 
-    #주말 파트 1
+    #주말 파트 1(02.04 주말 파트 주석처리되었음 : 직원 정보 입력 시 평일 / 주말 파트 구분 필요)
+    """
     part1_entry_start_week = Entry(frame1, width = 16, justify= 'center')
     part1_entry_start_week.place(x = 378, y = 350)
 
@@ -69,6 +100,7 @@ def start_info():
 
     part1_text_cost_week = Text(frame1, width = 10, height = 2, font = 12)
     part1_text_cost_week.place(x = 506, y = 360)
+    """
 
     #파트 2 입력 칸
     #평일 파트 2
@@ -85,6 +117,7 @@ def start_info():
     part2_text_cost.place(x = 278, y = 460)
 
     #주말 파트 2
+    """
     part2_entry_start_week = Entry(frame1, width = 16, justify= 'center')
     part2_entry_start_week.place(x = 378, y = 450)
 
@@ -93,6 +126,7 @@ def start_info():
 
     part2_text_cost_week = Text(frame1, width = 10, height = 2, font = 12)
     part2_text_cost_week.place(x = 506, y = 460)
+    """
 
     #파트 3 입력 칸
     #평일 파트 3
@@ -109,6 +143,7 @@ def start_info():
     part3_text_cost.place(x = 278, y = 560)
 
     #주말 파트 3
+    """
     part3_entry_start_week = Entry(frame1, width = 16, justify= 'center')
     part3_entry_start_week.place(x = 378, y = 550)
 
@@ -117,6 +152,7 @@ def start_info():
 
     part3_text_cost_week = Text(frame1, width = 10, height = 2, font = 12)
     part3_text_cost_week.place(x = 506, y = 560)
+    """
 
     #파트 4 입력 칸
     #평일 파트 4
@@ -133,6 +169,7 @@ def start_info():
     part4_text_cost.place(x = 278, y = 660)
 
     #주말 파트 4
+    """
     part3_entry_start_week = Entry(frame1, width = 16, justify= 'center')
     part3_entry_start_week.place(x = 378, y = 650)
 
@@ -141,6 +178,7 @@ def start_info():
 
     part4_text_cost_week = Text(frame1, width = 10, height = 2, font = 12)
     part4_text_cost_week.place(x = 506, y = 660)
+    """
 
     #프레임 2 직원 정보 입력
     name_label2 = Label(frame2, text = '직원 정보 입력', relief = 'raised', bd = 2, width = 20, height = 4, font = 20)
@@ -566,9 +604,18 @@ def start_info():
     checkbox_super_16 = Checkbutton(frame2, text = '관리자', variable = check_super_16)
     checkbox_super_16.place(x = 520, y = 700)
 
-    #저장 후 종료 버튼
-    exit_button = Button(frame2, text = '저장 후 종료', command = save_exit, width = 10, bg = 'white', height = 2, padx = 10, pady = 10)
+
+
+    #저장 버튼
+    save_button = Button(frame2, text = '저장', command = lambda : save_file(part_info, worker_info, super_info), width = 10, bg = 'white', height = 2, padx = 10, pady = 10)
+    save_button.place(x = 400, y = 30)
+
+    #종료 버튼
+    exit_button = Button(frame2, text = '종료', command = save_exit, width = 10, bg = 'white', height = 2, padx = 10, pady = 10)
     exit_button.place(x = 500, y = 30)
+    #####################################################
+    ####################UI 작성 종료######################
+    #####################################################
 
     tk.mainloop()
 
