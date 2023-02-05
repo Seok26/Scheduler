@@ -1,4 +1,5 @@
 from tkinter import *
+import pickle
 
 
 #저장 후 종료
@@ -8,6 +9,31 @@ def save_exit():
 
 #프로그램 시작
 def start_search():
+    part_info = []
+    worker_info = []
+    super_info = []
+    try:
+        part_file = open("part_info", "rb")
+        part_info = pickle.load(part_file)
+        part_file.close()
+
+        worker_file = open("worker_info", "rb")
+        worker_info = pickle.load(worker_file)
+        worker_file.close()
+
+        try:
+            super_file = open("super_info", "rb")
+            super_info = pickle.load(super_file)
+            super_file.close()
+            print(super_info)
+        except:
+            print("관리자 정보가 없습니다.")
+        print(part_info)
+        print(worker_info)
+    except:
+        print("아르바이트 정보를 먼저 입력해주세요 !")
+
+
     #####################################################
     ####################UI 작성 시작######################
     #####################################################
