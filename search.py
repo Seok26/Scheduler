@@ -98,6 +98,10 @@ def get_result():
     for i in range(1, len(worker_info)):
         work_count[worker_info[i][0]] = 0
 
+    work_count_super = {}
+    for i in range(1, len(super_info)):
+        work_count_super[super_info[i][0]] = 0
+
     part1_mon = []
     part2_mon = []
     part3_mon = []
@@ -190,6 +194,7 @@ def get_result():
                     candidate_super.append(super_info[i][0])
             get_super = random.randint(0, len(candidate_super) - 1)
             part1_mon_super.append(candidate_super[get_super])
+            work_count_super[candidate_super[get_super]] += 1
 
         #일반 아르바이트 생 시작
         #후보자 선정
@@ -215,6 +220,7 @@ def get_result():
                     candidate_super.append(super_info[i][0])
             get_super = random.randint(0, len(candidate_super) - 1)
             part1_tue_super.append(candidate_super[get_super])
+            work_count_super[candidate_super[get_super]] += 1
 
         #후보자 선정
         candidate = []
@@ -240,6 +246,7 @@ def get_result():
                     candidate_super.append(super_info[i][0])
             get_super = random.randint(0, len(candidate_super) - 1)
             part1_wed_super.append(candidate_super[get_super])
+            work_count_super[candidate_super[get_super]] += 1
 
         #후보자 선정
         candidate = []
@@ -265,6 +272,7 @@ def get_result():
                     candidate_super.append(super_info[i][0])
             get_super = random.randint(0, len(candidate_super) - 1)
             part1_thr_super.append(candidate_super[get_super])
+            work_count_super[candidate_super[get_super]] += 1
 
         #후보자 선정
         candidate = []
@@ -290,6 +298,7 @@ def get_result():
                     candidate_super.append(super_info[i][0])
             get_super = random.randint(0, len(candidate_super) - 1)
             part1_fri_super.append(candidate_super[get_super])
+            work_count_super[candidate_super[get_super]] += 1
 
         #후보자 선정
         candidate = []
@@ -315,6 +324,7 @@ def get_result():
                     candidate_super.append(super_info[i][0])
             get_super = random.randint(0, len(candidate_super) - 1)
             part1_sat_super.append(candidate_super[get_super])
+            work_count_super[candidate_super[get_super]] += 1
 
         #후보자 선정
         candidate = []
@@ -340,6 +350,7 @@ def get_result():
                     candidate_super.append(super_info[i][0])
             get_super = random.randint(0, len(candidate_super) - 1)
             part1_sun_super.append(candidate_super[get_super])
+            work_count_super[candidate_super[get_super]] += 1
 
         #후보자 선정
         candidate = []
@@ -367,6 +378,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part2_mon_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -392,6 +404,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part2_tue_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -417,6 +430,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part2_wed_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -442,6 +456,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part2_thr_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -467,6 +482,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part2_fri_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -492,6 +508,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part2_sat_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -517,6 +534,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part2_sun_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -527,6 +545,7 @@ def get_result():
 
             get_worker = random.randint(0, len(candidate) - 1)
             part2_sun.append(candidate[get_worker])
+            work_count[candidate[get_worker]] += 1
 
 
     #파트 3
@@ -544,6 +563,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part3_mon_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -569,6 +589,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part3_tue_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -594,6 +615,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part3_wed_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -619,6 +641,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part3_thr_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -644,6 +667,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part3_fri_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -669,6 +693,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part3_sat_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -694,6 +719,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part3_sun_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -723,6 +749,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part4_mon_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -748,6 +775,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part4_tue_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -773,6 +801,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part4_wed_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -798,6 +827,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part4_thr_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -823,6 +853,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part4_fri_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -848,6 +879,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part4_sat_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -873,6 +905,7 @@ def get_result():
                         candidate_super.append(super_info[i][0])
                 get_super = random.randint(0, len(candidate_super) - 1)
                 part4_sun_super.append(candidate_super[get_super])
+                work_count_super[candidate_super[get_super]] += 1
 
             #후보자 선정
             candidate = []
@@ -1200,6 +1233,14 @@ def get_result():
         part4_sun_text += part4_sun[i]
         part4_sun_text += '\n'
     sun_part4.insert("1.0", part4_sun_text)
+
+    stat_file = open("stat", "wb")
+    pickle.dump(work_count, stat_file)
+    stat_file.close()
+
+    stat_super_file = open("stat_super", "wb")
+    pickle.dump(work_count_super, stat_super_file)
+    stat_super_file.close()
 
 
 #프로그램 시작

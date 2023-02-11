@@ -1,11 +1,41 @@
 from tkinter import *
+import pickle
+
+global worker1_name
 
 #저장 후 종료
 def save_exit():
     exit()
 
+def get_result():
+    global worker1_name
+    stat_file = open("stat", "rb")
+    stat = pickle.load(stat_file)
+    stat_file.close()
+
+    stat_super_file = open("stat_super", "rb")
+    stat_super = pickle.load(stat_super_file)
+    stat_super_file.close()
+
+    stat_str = ""
+    for name, count in stat_super.items():
+        temp = "이름 : " + name + "(SV)   |||||||| 근무 횟수 : " + str(count) + " 회"
+        stat_str += temp
+        stat_str += '\n'
+
+    for name, count in stat.items():
+        temp = "이름 : " + name + " |||||||| 근무 횟수 : " + str(count) + " 회"
+        stat_str += temp
+        stat_str += '\n'
+
+
+
+    worker1_name.insert("1.0", stat_str)
+
+
 #프로그램 시작
 def start_cost():
+    global worker1_name
     #####################################################
     ####################UI 작성 시작######################
     #####################################################
@@ -15,18 +45,24 @@ def start_cost():
     tk.resizable(True, True) #Window 크기 조절 여부(상하, 좌우)
 
 
-    #급여 조회 버튼
-    title_label = Label(tk, text = '급여 조회', relief = 'raised', bd = 2, width = 30, height = 5, font = 20)
+    #통계 조회 버튼
+    title_label = Label(tk, text = '통계 조회', relief = 'raised', bd = 2, width = 30, height = 5, font = 20)
     title_label.pack(side='top')
 
     #저장 후 종료
     exit_button = Button(tk, text = '뒤로 가기', command = save_exit, width = 13, bg = 'white', height = 2, padx = 10, pady = 10)
     exit_button.place(x = 1100, y = 35)
 
+    #통계 조회
+    stat_button = Button(tk, text = '조회', command = get_result, width = 13, bg = 'white', height = 2, padx = 10, pady = 10)
+    stat_button.place(x = 900, y = 35)
+
     #시스템 UI
-    name_label = Label(tk, text = '이름', relief = 'raised', bd = 2, width = 15, height = 3, font = 15)
+    """
+    name_label = Label(tk, text = '정보', relief = 'raised', bd = 2, width = 15, height = 3, font = 15)
     name_label.place(x = 100, y = 150)
 
+    
     cost_label = Label(tk, text = '급여', relief = 'raised', bd = 2, width = 15, height = 3, font = 15)
     cost_label.place(x = 250, y = 150)
 
@@ -35,18 +71,21 @@ def start_cost():
 
     cost_label2 = Label(tk, text = '급여', relief = 'raised', bd = 2, width = 15, height = 3, font = 15)
     cost_label2.place(x = 1000, y = 150)
+    """
 
     #이름 / 급여 시작
     #1번 직원
-    worker1_name = Text(tk,  relief = 'solid', bd = 3, width = 12, height = 2, font = ("", 15,"bold"))
+    worker1_name = Text(tk,  relief = 'solid', bd = 3, width = 100, height = 20, font = ("", 15,"bold"))
     worker1_name.place(x = 100, y = 220)
-    worker1_name.insert(1.0, "이 름")
 
+
+    """
     worker1_cost = Text(tk,  relief = 'solid', bd = 3, width = 12, height = 2, font = ("", 15,"bold"))
     worker1_cost.place(x = 250, y = 220)
     worker1_cost.insert(1.0, "급 여")
 
     #2번 직원
+    
     worker2_name = Text(tk,  relief = 'solid', bd = 3, width = 12, height = 2, font = ("", 15,"bold"))
     worker2_name.place(x = 100, y = 300)
 
@@ -154,4 +193,5 @@ def start_cost():
     #####################################################
     ####################UI 작성 종료######################
     #####################################################
+    """
     tk.mainloop()

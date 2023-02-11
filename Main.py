@@ -40,7 +40,7 @@ input_button = Button(tk, text = '아르바이트 정보 입력', command = ente
 input_button.place(x = 200, y = 200)
 
 #급여 조회 Button
-cost_button = Button(tk, text = '급여 조회', command = enter_cost, width = 30, height = 3, padx = 10, pady = 10)
+cost_button = Button(tk, text = '근무 통계', command = enter_cost, width = 30, height = 3, padx = 10, pady = 10)
 cost_button.place(x = 200, y = 300)
 
 tk.mainloop()
