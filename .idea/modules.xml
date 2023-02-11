@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../CodeTest/CodeTest.iml" filepath="$PROJECT_DIR$/../CodeTest/CodeTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/Part Timer Scheduler.iml" filepath="$PROJECT_DIR$/Part Timer Scheduler.iml" />
     </modules>
   </component>

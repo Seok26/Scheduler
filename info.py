@@ -793,6 +793,28 @@ def save_exit():
     exit()
 
 
+def set_cost_all():
+    global part1_entry_start
+    global part1_text_cost
+    global part2_entry_start
+    global part2_text_cost
+    global part3_entry_start
+    global part3_text_cost
+    global part4_entry_start
+    global part4_text_cost
+
+    if part2_entry_start.get() != "" :
+        part2_text_cost.insert(1.0, part1_text_cost.get("1.0", "end"))
+
+    if part3_entry_start.get() != "" :
+        part3_text_cost.insert(1.0, part1_text_cost.get("1.0", "end"))
+
+    if part4_entry_start.get() != "" :
+        part4_text_cost.insert(1.0, part1_text_cost.get("1.0", "end"))
+
+
+
+
 #프로그램 시작
 def start_info():
     global part1_entry_start
@@ -847,7 +869,7 @@ def start_info():
     name_label = Label(frame1, text = '파트 정보 입력', relief = 'raised', bd = 2, width = 20, height = 4, font = 20)
     name_label.place(x = 220, y = 100)
 
-    weekday_label = Label(frame1, text = '평일', relief = 'raised', bd = 2, width = 12, height = 3, font = 15)
+    weekday_label = Label(frame1, text = '시간 및 급여', relief = 'raised', bd = 2, width = 12, height = 3, font = 15)
     weekday_label.place(x = 150, y = 275)
 
     """
@@ -855,7 +877,7 @@ def start_info():
     weekend_label.place(x = 380, y = 275)
     """
 
-    costset_button = Button(frame1, text = '급여 일괄 적용', overrelief= "solid", bg = 'white', width = 12, height = 2, font = 12)
+    costset_button = Button(frame1, text = '급여 일괄 적용', overrelief= "solid", command = set_cost_all, bg = 'white', width = 12, height = 2, font = 12)
     costset_button.place(x = 15, y = 285)
 
     announce_label = Label(frame1, text = '사용하지 않는 파트 칸은 비워두세요.', relief = 'groove', bd = 2, width = 40, height = 3, font = 15)
